@@ -43,11 +43,11 @@ public class Giorno {
 			while (turno.getDipendentiTurnisti().size() <= numDipendentiPerTurno) {
 				for (Turnista dip : listaTurnisti) {
 					if (dip.getNumeroGiorniLavorati() >= Turnista.getMaxgglavorativi()) { // vincolo 1 - max 18 giorni lavorati
-						this.listaTurniGiornaliera.get(this.listaTurniGiornaliera.size()-1).getDipendentiTurnisti().add(dip); //aggiungo a turno riposo
+						this.settaTurnoRiposo(dip);//aggiungo a turno riposo
 						continue;
 					}
 					if (dip.getGiorniLavoratiConsecutivi() > dip.getGiorniLavoratiConsecutivi()) { // vincolo 2 - max 5 giorni lavorati consecutivi
-						this.listaTurniGiornaliera.get(this.listaTurniGiornaliera.size()-1).getDipendentiTurnisti().add(dip); //aggiungo a turno riposo
+						this.settaTurnoRiposo(dip);//aggiungo a turno riposo
 						continue;
 					}
 					Integer indexNextTurno;
@@ -62,9 +62,8 @@ public class Giorno {
 
 						String turnoNext = MeseLavorativo.patternTurni.get(indexNextTurno);
 						dip.setIndexTurno(indexNextTurno);
-						if (turnoNext.equals("R")) { // vincolo 2 - update
-														// giorni lavorati
-							dip.setGiorniLavoratiConsecutivi(0);
+						if (turnoNext.equals("R")) { // vincolo 2 - update giorni lavorati
+							this.settaTurnoRiposo(dip);//aggiungo a turno riposo
 						} else {
 							dip.setGiorniLavoratiConsecutivi(dip.getGiorniLavoratiConsecutivi() + 1);
 							dip.setNumeroGiorniLavorati(dip.getNumeroGiorniLavorati() + 1);
@@ -75,6 +74,11 @@ public class Giorno {
 			}
 			this.listaTurniGiornaliera.add(turno); // aggiungo turno al giorno
 		}
+	}
+	
+	private void settaTurnoRiposo(Turnista dip){
+		this.listaTurniGiornaliera.get(this.listaTurniGiornaliera.size()-1).getDipendentiTurnisti().add(dip);
+		dip.setGiorniLavoratiConsecutivi(0);
 	}
 
 }
