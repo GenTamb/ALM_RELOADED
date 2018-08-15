@@ -26,6 +26,7 @@ public class MeseLavorativo {
 				
 				giorno.istanziaTurniGiornalieri(listaTurnisti, numDipendentiPerTurno);
 				
+				System.out.println(giorno.toString());
 				listGiorni.add(giorno);
 				
 			}

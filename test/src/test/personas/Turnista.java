@@ -63,14 +63,15 @@ public class Turnista extends Dipendente{
 		this.turniMensili = turniMensili;
 	}
 	
-	public void addTurno(String turno){
+	public void addTurno(String turno, boolean increase){
 		this.turniMensili.add(turno);
-		this.incrementaGiorniLavorati();
+		if(increase)
+			this.incrementaGiorniLavorati();
 	}
 	
-	public void settaRiposo(String turno){
+	public void settaRiposo(String turno, boolean increase){
 		this.setGiorniLavoratiConsecutivi(0);
-		this.addTurno(turno);
+		this.addTurno(turno,increase);
 	}
 
 	public void incrementaGiorniLavorati(){
