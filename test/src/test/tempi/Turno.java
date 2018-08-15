@@ -34,6 +34,10 @@ public class Turno {
 		this.nomeTurno = nomeTurno;
 	}
 	
+	public void addTurnista(Turnista dip){
+		this.dipendentiTurnisti.add(dip);
+	}
+	
 	
 	
 }

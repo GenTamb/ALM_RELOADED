@@ -2,7 +2,7 @@ package test.personas;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//la classe simula un DB
 public class Turnisti {
 	
 	private static List<Turnista> listaTurnisti = null;

@@ -28,7 +28,24 @@ public class MainTestDipendenti {
 		
 		MeseLavorativo mese = new MeseLavorativo();
 		
-		System.out.println(turnisti.getListaTurnisti());
+//		System.out.println(mese.stampaMese());
+		System.out.println(turn1.toString());
+		System.out.println(turn2.toString());
+		System.out.println(turn3.toString());
+		System.out.println(turn4.toString());
+		System.out.println(turn5.toString());
+		System.out.println(turn6.toString());
+		System.out.println(turn7.toString());
+		System.out.println(turn8.toString());
+		System.out.println(turn9.toString());
+		System.out.println(turn10.toString());
+		System.out.println(turn11.toString());
+		System.out.println(turn12.toString());
+		System.out.println(turn13.toString());
+		System.out.println(turn14.toString());
+		System.out.println(turn15.toString());
+		
+		
 	}
 
 }

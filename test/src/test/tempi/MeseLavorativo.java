@@ -22,7 +22,7 @@ public class MeseLavorativo {
 		
 		if(numDipendentiPerTurno>=Turno.getMinTurnisti()){
 			for (int i = 1; i <= maxGG; i++) {
-				Giorno giorno = new Giorno(i);
+				Giorno giorno = new Giorno(i,numDipendentiPerTurno);
 				
 				giorno.istanziaTurniGiornalieri(listaTurnisti, numDipendentiPerTurno);
 				
@@ -57,5 +57,25 @@ public class MeseLavorativo {
 		return MeseLavorativo.patternTurni.get(index);
 	}
 	
+//	public String stampaMese(){
+//		StringBuilder sb = new StringBuilder();
+//		sb.append("*****mese*****\n");
+//		for (Giorno giorno : listGiorni) {
+//			sb.append("giorno numero: ").append(giorno.getNumGiorno()).append("\n");
+//			List<Turno> listTurni = giorno.getListaTurniGiornaliera();
+//			for (Turno turno : listTurni) {
+//				sb.append("******\n");
+//				sb.append("nome Turno: ").append(turno.getNomeTurno()).append("\n");
+//				sb.append("**turnisti**\n");
+//				List<Turnista> turnisti = turno.getDipendentiTurnisti();
+//				for (Turnista turnista : turnisti) {
+//					sb.append("\nnome: ").append(turnista.getNome()).append(" ggLavoratiConsecutivi: ").append(turnista.getGiorniLavoratiConsecutivi()).append(" ggLavoratiTotali: ").append(turnista.getNumeroGiorniLavorati());
+//				}
+//			}
+//		}
+//		
+//		return sb.toString();
+//		
+//	}
 	
 }
